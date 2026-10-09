@@ -1,0 +1,93 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.section {
+  background: $newsletter;
+  color: #fff;
+  padding: 48px 0;
+}
+
+.inner {
+  @include container;
+  text-align: center;
+}
+
+.inner h2 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.inner > p {
+  margin-top: 8px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.fields {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.fields label {
+  flex: 1;
+  max-width: 280px;
+}
+
+.fields input {
+  width: 100%;
+  height: 46px;
+  border: 0;
+  border-radius: 6px;
+  padding: 0 14px;
+  font-size: 14px;
+  color: $text;
+}
+
+.fields button {
+  height: 46px;
+  min-width: 150px;
+  border: 0;
+  border-radius: 6px;
+  background: $yellow;
+  color: #2c2c2c;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.fields button:hover {
+  background: $yellow-hover;
+}
+
+.terms {
+  margin-top: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.error,
+.success {
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.error {
+  color: #ffd2d2;
+}
+
+@media (max-width: $bp-md) {
+  .fields {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fields label,
+  .fields button {
+    width: 100%;
+    max-width: 360px;
+  }
+}

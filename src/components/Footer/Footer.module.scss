@@ -1,0 +1,125 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.footer {
+  background: #f7f7f7;
+  color: $text;
+  padding-top: 48px;
+}
+
+.grid {
+  @include container;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr 1fr;
+  gap: 32px;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.logo span {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: $yellow;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+}
+
+.grid p {
+  margin-top: 12px;
+  max-width: 240px;
+  font-size: 13px;
+  color: #666;
+}
+
+.social {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.social a {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid $line;
+  display: grid;
+  place-items: center;
+  color: $text;
+}
+
+.social svg {
+  width: 16px;
+  height: 16px;
+}
+
+.grid h2 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.grid nav a {
+  display: inline-block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  color: #666;
+  text-decoration: none;
+}
+
+.grid nav a:hover {
+  color: $blue;
+}
+
+.payments {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.payments li {
+  min-width: 72px;
+  height: 28px;
+  padding: 0 8px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  background: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+}
+
+.copy {
+  margin-top: 32px;
+  border-top: 1px solid $line;
+  padding: 16px 0;
+  text-align: center;
+}
+
+.copy p {
+  margin: 0;
+  font-size: 12px;
+  color: #777;
+}
+
+@media (max-width: $bp-lg) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: $bp-sm) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

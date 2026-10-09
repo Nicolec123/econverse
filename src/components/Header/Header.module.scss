@@ -1,0 +1,198 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.header {
+  background: #fff;
+  border-bottom: 1px solid $line;
+}
+
+.benefits {
+  border-bottom: 1px solid $line;
+}
+
+.benefits ul {
+  @include container;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 16px;
+  min-height: 38px;
+  align-items: center;
+}
+
+.benefits li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: $muted;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.benefitIcon {
+  width: 18px;
+  height: 18px;
+  flex: none;
+}
+
+.main {
+  @include container;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 32px;
+  min-height: 92px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: $text;
+}
+
+.mark {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: $yellow;
+  color: $text;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.word {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.4px;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  height: 44px;
+  border: 1px solid #dedede;
+  border-radius: 10px;
+  padding: 0 6px 0 16px;
+  background: #fff;
+}
+
+.search input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: none;
+  font-size: 13px;
+  color: $text;
+  background: transparent;
+}
+
+.search input::placeholder {
+  color: #b0b0b0;
+}
+
+.search button {
+  width: 36px;
+  height: 36px;
+  border: 0;
+  background: transparent;
+  color: $muted;
+  display: grid;
+  place-items: center;
+}
+
+.searchIcon {
+  width: 18px;
+  height: 18px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.actions button {
+  width: 28px;
+  height: 28px;
+  border: 0;
+  background: none;
+  color: $text;
+  display: grid;
+  place-items: center;
+}
+
+.actions svg {
+  width: 24px;
+  height: 24px;
+}
+
+.nav ul {
+  @include container;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+  min-height: 48px;
+}
+
+.nav a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  color: #5c5c5c;
+}
+
+.nav a:hover {
+  color: $blue;
+}
+
+.crown {
+  width: 18px;
+  height: 18px;
+  color: $yellow;
+}
+
+@media (max-width: 760px) {
+  .main {
+    grid-template-columns: 1fr auto;
+    gap: 16px 24px;
+    padding-block: 16px;
+  }
+
+  .search {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+}
+
+@media (max-width: $bp-md) {
+  .benefits ul {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-block: 8px;
+  }
+
+  .benefits li {
+    flex: none;
+  }
+
+  .word {
+    font-size: 18px;
+  }
+
+  .nav ul {
+    justify-content: flex-start;
+    overflow-x: auto;
+    gap: 18px;
+  }
+
+  .nav a {
+    flex: none;
+  }
+}

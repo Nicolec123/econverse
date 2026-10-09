@@ -1,0 +1,68 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.section {
+  padding: 36px 0 12px;
+}
+
+.section ul {
+  @include container;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.section button {
+  width: 110px;
+  border: 0;
+  background: transparent;
+  color: $text;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.iconWrap {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 1px solid $line;
+  display: grid;
+  place-items: center;
+  color: #2f2f2f;
+  background: #fff;
+  transition: border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.iconWrap svg {
+  width: 34px;
+  height: 34px;
+}
+
+.section button:hover .iconWrap,
+.active .iconWrap {
+  color: $blue;
+  border-color: $blue;
+  box-shadow: 0 6px 16px rgba(52, 66, 181, 0.12);
+}
+
+.active {
+  color: $blue;
+  font-weight: 600;
+}
+
+@media (max-width: $bp-lg) {
+  .section ul {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+
+  .section li {
+    flex: none;
+  }
+}

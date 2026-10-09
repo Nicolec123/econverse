@@ -1,0 +1,12 @@
+@use 'variables' as *;
+
+@mixin container {
+  width: min(100% - 48px, $container);
+  margin-inline: auto;
+}
+
+@mixin down($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}

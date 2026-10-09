@@ -1,0 +1,157 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.section {
+  padding: 36px 0;
+}
+
+.inner {
+  @include container;
+}
+
+.tabs {
+  display: flex;
+  margin-top: 18px;
+  border: 1px solid $line;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+.tab,
+.tabActive {
+  flex: 1 0 auto;
+  min-width: 120px;
+  height: 46px;
+  border: 0;
+  border-right: 1px solid $line;
+  background: #fff;
+  color: $muted;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.tab:last-child,
+.tabActive:last-child {
+  border-right: 0;
+}
+
+.tabActive {
+  color: $blue;
+}
+
+.feedback {
+  margin-top: 24px;
+  color: $text;
+  font-size: 14px;
+}
+
+.feedback button {
+  margin-top: 12px;
+  height: 40px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 6px;
+  background: $blue;
+  color: #fff;
+  font-weight: 700;
+}
+
+.carousel {
+  position: relative;
+  margin-top: 22px;
+}
+
+.track {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding-bottom: 8px;
+}
+
+.track::-webkit-scrollbar {
+  display: none;
+}
+
+.track > article {
+  flex: 0 0 calc((100% - 72px) / 4);
+  scroll-snap-align: start;
+}
+
+.expanded {
+  flex-wrap: wrap;
+  overflow: visible;
+}
+
+.arrow {
+  position: absolute;
+  top: 42%;
+  z-index: 1;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  color: #666;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16);
+  display: grid;
+  place-items: center;
+}
+
+.arrow svg {
+  width: 18px;
+  height: 18px;
+}
+
+.arrow:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.prev {
+  left: -18px;
+}
+
+.next {
+  right: -18px;
+}
+
+.next svg {
+  transform: none;
+}
+
+.prev svg {
+  transform: rotate(180deg);
+}
+
+@media (max-width: $bp-lg) {
+  .track > article,
+  .expanded > article {
+    flex-basis: calc((100% - 48px) / 3);
+  }
+}
+
+@media (max-width: $bp-md) {
+  .track > article,
+  .expanded > article {
+    flex-basis: calc((100% - 24px) / 2);
+  }
+
+  .prev {
+    left: 0;
+  }
+
+  .next {
+    right: 0;
+  }
+}
+
+@media (max-width: $bp-sm) {
+  .track > article,
+  .expanded > article {
+    flex-basis: 85%;
+  }
+}
